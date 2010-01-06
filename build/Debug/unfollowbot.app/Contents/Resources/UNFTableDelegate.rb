@@ -13,6 +13,13 @@ class UNFTableDelegate
     parent.friends.count
   end
   
+  # - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+  # ???
+  def tableViewSelectionDidChange(notification)
+    NSLog(notification.inspect)
+  end
+
+  
   def tableView(tableView, objectValueForTableColumn:column, row:row)
     if row < parent.friends.length
       if column.identifier == "profile_image" || column.identifier == "unfollow_button"
